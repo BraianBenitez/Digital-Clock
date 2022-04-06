@@ -1,0 +1,75 @@
+/* Importamos una fuente para utilizarla 
+en los números del reloj */
+@font-face {
+    font-family: 'DS-DIGIT';
+    src: url(DS-DIGIT.TTF);
+    font-weight: normal;
+    font-style: normal;
+}
+/* Quitamos los márgenes y rellenos y le indicamos al navegador que cuente
+ los bordes o rellenos que se añadan como tamaño total del contenedor */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Establecemos la fuente de todos los elementos
+en 10px para poder usar mejor las unidades relativas */
+:root {
+    font-size: 10px;
+}
+/* hacemos que el contenedor ocupe toda la pantalla, le cambiamos el fondo
+y centramos todos los elementos tanto horizontal como verticalmente */
+.container {
+    background-color: rgb(19, 16, 16);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* A la hora insertada mediante JS le establecemos un tamaño del 14% del anchor
+de la pantalla, le establecemos como fuente principal aquella que fue importada 
+y le agregamos un fondo con gradiente para luego reducirlo al texto y a este hacerlo 
+transparente  */
+#clock {
+    font-size: 14vw;
+    font-family: 'DS-DIGIT', sans-serif;
+    background: linear-gradient(0deg, 
+        rgba(8,171,204,1) 11%, 
+        rgba(163,25,25,1) 79%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    /*Especifica el color de relleno de las letras de un texto.
+    si no se especifica, usa el valor de la prop. color*/
+    -webkit-text-fill-color: transparent; 
+}
+.controls {
+    margin-top: 1.5rem;
+}
+.button {
+    font-weight: bold;
+    padding: .5rem .8rem;
+    border: none;
+    border-radius: .6rem;
+    cursor: pointer;
+    background-color: #d6dde0;
+    margin-left: .5rem;
+}
+/* .set-alarm {
+    margin-right: .5rem;
+    background-color: rgba(53, 187, 35, .8);
+}
+.set-alarm:hover {
+    transition: background-color .5s;
+    background-color: rgba(53, 187, 35, 1);
+}
+.delete-alarm { 
+    margin-left: .5rem;
+    background-color: rgba(212, 39, 39, .8);
+}
+.delete-alarm:hover {
+    transition: background-color .5s;
+    background-color: rgba(212, 39, 39, 1);
+} */
